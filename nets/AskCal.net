@@ -1,0 +1,28 @@
+% STUDENT GOVERNMENT OF UNIVERSITY OF LJUBLJANA (Hlebec 1992)
+% asking for an opinion, recall
+
+*Vertices 11
+1 "minister 1"
+2 "p.minister"
+3 "minister 2"
+4 "minister 3"
+5 "minister 4"
+6 "minister 5"
+7 "minister 6"
+8 "minister 7"
+9 "adviser 1"
+10 "adviser 2"
+11 "adviser 3"
+*Arcslist
+1 2 6
+2 4 8
+3 1 2 4 6 8
+4 2
+5 2 6
+6 2
+7 4 8 9
+8 2 4 11
+9 7 8 11
+10 1 2 3 5
+11 3 6 8
+*Edgeslist
