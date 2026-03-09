@@ -7,11 +7,24 @@ A tool for classifying directed arcs in complex networks into four hierarchical 
 - **Local Bridge** — Cross-cluster connections linking nearby communities.
 - **Global Bridge** — Long-range connections linking distant communities; removal may disconnect the network.
 
-HATA extends the [HETA](https://github.com/wcchin/HETA) framework (designed for undirected graphs) to **directed networks** by replacing the "common friends" concept with directional ego networks (outgoing/incoming).
+HATA extends the [HETA](https://github.com/canslab1/HETA) framework (designed for undirected graphs) to **directed networks** by replacing the "common friends" concept with directional ego networks (outgoing/incoming).
 
-## References
+## Overview
 
-1. Huang, C.-Y. & Chin, W. C. B. (2020). Distinguishing Arc Types to Understand Complex Network Strength Structures and Hierarchical Connectivity Patterns. *IEEE Access*, 8, 71021–71040. https://doi.org/10.1109/ACCESS.2020.2986017
+Many real-world networks are inherently directed — information flows, citation graphs, food webs, and online social interactions all have asymmetric relationships. While HETA can classify edges in undirected networks, directed arcs require a fundamentally different approach to neighborhood overlap computation.
+
+HATA addresses this by constructing separate outgoing and incoming ego networks for each arc endpoint, enabling the classification of directed arcs into the same four hierarchical types. This extension preserves the parameter-free, topology-driven philosophy of HETA while correctly handling the asymmetry of directed connections.
+
+## Features
+
+- **Parameter-free** — Classification is driven entirely by network topology; no community labels, edge weights, or manual thresholds required.
+- **Directed network support** — Handles directed arcs using separate outgoing/incoming ego networks.
+- **Multi-scale analysis** — Ego networks expand layer by layer, capturing both local and global structural information.
+- **Statistically adaptive thresholds** — R1 threshold derived from degree-preserving random directed null models.
+- **Multi-format input** — Supports Pajek (.net), GML, GraphML, edge list, and adjacency list formats.
+- **Dual interface** — Both a PySide6 GUI and a full-featured CLI.
+- **Parallel processing** — Random network generation can use multiple CPU cores.
+- **Rich output** — Excel workbooks, CSV arc classification tables (Gephi/Cytoscape compatible), and multiple plot types.
 
 ## Installation
 
@@ -131,8 +144,12 @@ HATA/
 
 ## Authors
 
-- **Chung-Yuan Huang** (gscott@mail.cgu.edu.tw)
-- **Wei-Chien-Benny Chin** (wcchin.88@gmail.com)
+- **Chung-Yuan Huang** (黃崇源) — Department of Computer Science and Information Engineering, Chang Gung University, Taiwan (gscott@mail.cgu.edu.tw)
+- **Wei-Chien-Benny Chin** — wcchin.88@gmail.com
+
+## References
+
+1. Huang, C.-Y. & Chin, W. C. B. (2020). Distinguishing Arc Types to Understand Complex Network Strength Structures and Hierarchical Connectivity Patterns. *IEEE Access*, 8, 71021–71040. https://doi.org/10.1109/ACCESS.2020.2986017
 
 ## License
 
