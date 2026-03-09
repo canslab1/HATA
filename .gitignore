@@ -1,30 +1,49 @@
-# Python
+# ===== Python =====
 __pycache__/
 *.py[cod]
 *$py.class
-*.egg-info/
-dist/
-build/
-*.egg
+*.so
+.Python
 
-# HATA cache
+# ===== HATA Cache =====
 .hata_cache/
+.convergence_cache/
+*.pkl
 
-# Analysis outputs (can be regenerated)
-network_fingerprints.json
-*.gpickle
+# ===== Generated Output =====
+network_fingerprints*.json
+*_result.net
+*_result.png
+*_result_*.png
+*_result.xlsx
+*_edges.csv
+fingerprints_*.png
+correlation_*.png
+hierarchy_*.png
+suite_result_*.xlsx
 
-# macOS
+# ===== macOS =====
 .DS_Store
+._.DS_Store
 
-# IDE
+# ===== Dropbox Conflict Copies =====
+*衝突的複本*
+*(conflicted copy*
+
+# ===== IDE =====
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# Virtual environment
+# ===== Distribution / Packaging =====
+dist/
+build/
+*.egg-info/
+*.egg
+
+# ===== Virtual Environment =====
 venv/
 .venv/
 env/
