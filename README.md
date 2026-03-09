@@ -120,7 +120,6 @@ HATA/
 │       ├── worker.py        # QThread background workers
 │       └── plot_canvas.py   # Matplotlib-Qt integration
 ├── nets/                    # Sample directed networks
-├── HATA.py                  # Legacy Python 2.7 implementation (reference only)
 └── requirements.txt
 ```
 
