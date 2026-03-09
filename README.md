@@ -9,9 +9,9 @@ A tool for classifying directed arcs in complex networks into four hierarchical 
 
 HATA extends the [HETA](https://github.com/wcchin/HETA) framework (designed for undirected graphs) to **directed networks** by replacing the "common friends" concept with directional ego networks (outgoing/incoming).
 
-## Reference
+## References
 
-> Chung-Yuan Huang & Wei-Chien-Benny Chin (2012). Distinguishing Arc Types to Understand Complex Network Strength Structures and Hierarchical Connectivity Patterns.
+1. Huang, C.-Y. & Chin, W. C. B. (2020). Distinguishing Arc Types to Understand Complex Network Strength Structures and Hierarchical Connectivity Patterns. *IEEE Access*, 8, 71021–71040. https://doi.org/10.1109/ACCESS.2020.2986017
 
 ## Installation
 
