@@ -1,5 +1,8 @@
 # HATA — Hierarchical Arc Type Analysis
 
+![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
+
 A tool for classifying directed arcs in complex networks into four hierarchical types:
 
 - **BOND** — Strong connections embedded within tight communities; removing them does not alter community structure.

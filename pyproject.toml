@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hata"
+version = "2.0"
+description = "Hierarchical Arc Type Analysis — classify directed arcs in complex networks into BOND, SILK, LOCAL BRIDGE, and GLOBAL BRIDGE"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Chung-Yuan Huang", email = "gscott@mail.cgu.edu.tw"},
+    {name = "Wei-Chien-Benny Chin"},
+]
+keywords = ["network analysis", "complex networks", "arc classification", "directed networks", "graph theory"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "networkx>=3.0",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+gui = ["PySide6>=6.5"]
+
+[project.urls]
+Homepage = "https://github.com/canslab1/HATA"
+Repository = "https://github.com/canslab1/HATA"
+Issues = "https://github.com/canslab1/HATA/issues"
+
+[project.scripts]
+hata = "run_hata:main"
+
+[tool.setuptools.packages.find]
+include = ["hata*"]

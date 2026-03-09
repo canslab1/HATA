@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+title: >-
+  HATA: Hierarchical Arc Type Analysis
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Chung-Yuan
+    family-names: Huang
+    affiliation: >-
+      Department of Computer Science and Information
+      Engineering, Chang Gung University, Taiwan
+    email: gscott@mail.cgu.edu.tw
+  - given-names: Wei-Chien-Benny
+    family-names: Chin
+repository-code: 'https://github.com/canslab1/HATA'
+url: 'https://github.com/canslab1/HATA'
+abstract: >-
+  A tool for classifying directed arcs in complex networks
+  into four hierarchical types (BOND, SILK, LOCAL BRIDGE,
+  GLOBAL BRIDGE) based purely on network topology, without
+  requiring pre-defined community labels or edge weights.
+keywords:
+  - network analysis
+  - complex networks
+  - arc classification
+  - directed networks
+  - graph theory
+license: MIT
+version: 2.0.0
+date-released: '2026-01-01'
+preferred-citation:
+  type: article
+  authors:
+    - given-names: Chung-Yuan
+      family-names: Huang
+    - given-names: Wei-Chien-Benny
+      family-names: Chin
+  title: >-
+    Distinguishing Arc Types to Understand Complex Network
+    Strength Structures and Hierarchical Connectivity
+    Patterns
+  journal: IEEE Access
+  year: 2020
+  volume: '8'
+  pages: 71021-71040
+  doi: 10.1109/ACCESS.2020.2986017
