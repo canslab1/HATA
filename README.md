@@ -34,6 +34,8 @@ HATA addresses this by constructing separate outgoing and incoming ego networks 
 **Requirements:** Python 3.10+
 
 ```bash
+git clone https://github.com/canslab1/HATA.git
+cd HATA
 pip install -r requirements.txt
 ```
 
@@ -148,7 +150,15 @@ HATA/
 ## Authors
 
 - **Chung-Yuan Huang** (黃崇源) — Department of Computer Science and Information Engineering, Chang Gung University, Taiwan (gscott@mail.cgu.edu.tw)
-- **Wei-Chien-Benny Chin** — wcchin.88@gmail.com
+- **Wei-Chien-Benny Chin** — Department of Urban Planning and Design, University of Malaya, Malaysia (wcchin.88@gmail.com)
+
+## Citation
+
+If you use this software in your research, please cite:
+
+> Huang, C.-Y. & Chin, W. C. B. (2020). Distinguishing Arc Types to Understand Complex Network Strength Structures and Hierarchical Connectivity Patterns. *IEEE Access*, 8, 71021–71040. https://doi.org/10.1109/ACCESS.2020.2986017
+
+See `CITATION.cff` for machine-readable citation metadata.
 
 ## References
 

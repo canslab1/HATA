@@ -1,6 +1,10 @@
 # Changelog
 
-## v2.0 (2026)
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+## v2.0.0 (2026-01-01)
 
 Complete rewrite from Python 2.7 to Python 3.
 
@@ -19,7 +23,7 @@ Complete rewrite from Python 2.7 to Python 3.
 - Progress reporting via callbacks (supports both GUI and CLI)
 - Modern Python APIs: f-strings, dataclasses, type hints
 
-## v1.0 (2012)
+## v1.0.0 (2012)
 
 Original implementation by Chung-Yuan Huang and Wei-Chien-Benny Chin.
 

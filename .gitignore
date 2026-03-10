@@ -43,6 +43,12 @@ build/
 *.egg-info/
 *.egg
 
+# ===== Windows =====
+Thumbs.db
+
+# ===== Claude Code =====
+.claude/
+
 # ===== Virtual Environment =====
 venv/
 .venv/
