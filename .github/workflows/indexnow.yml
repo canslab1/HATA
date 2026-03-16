@@ -11,11 +11,14 @@ on:
   push:
     branches: [main]
     paths:
-      - '*.html'
-      - '*.css'
-      - '*.js'
-      - '*.md'
-      - 'images/**'
+      - 'index.html'
+      - 'README.md'
+      - '*.py'
+      - '*.cpp'
+      - '*.java'
+      - '*.m'
+      - 'src/**'
+      - 'docs/**'
   schedule:
     # 每週一 01:00 UTC = 台灣時間 09:00
     - cron: '0 1 * * 1'
@@ -29,10 +32,10 @@ jobs:
         run: |
           HOST="canslab1.github.io"
           KEY="d22a81b36ccb45e085fe6679a822df52"
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
 
           URLS=(
-            "https://${HOST}/HATA/"
-            "https://${HOST}/HATA/index.html"
+            "https://${HOST}/${REPO_NAME}/"
           )
 
           # 組合 JSON 陣列
@@ -44,7 +47,7 @@ jobs:
           URL_JSON+="]"
 
           echo "══════════════════════════════════════"
-          echo "  IndexNow 自動提交"
+          echo "  IndexNow 自動提交 — ${REPO_NAME}"
           echo "  提交頁數: ${#URLS[@]}"
           echo "══════════════════════════════════════"
 
