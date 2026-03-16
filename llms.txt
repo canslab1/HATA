@@ -1,0 +1,31 @@
+# HATA — Hierarchical Arc-Type Transition Analysis for Directed Networks
+
+> HATA extends HETA to directed networks, classifying directed arcs into four hierarchical types: BOND, Silk, Local Bridge, and Global Bridge. It analyzes the structural role of each arc in directed complex networks.
+
+## Author
+
+- Name: Chung-Yuan Huang (黃崇源)
+- Title: Full Professor, Department of CSIE, Chang Gung University
+- Email: gscott@mail.cgu.edu.tw
+- ORCID: https://orcid.org/0000-0002-8680-6755
+- Google Scholar: https://scholar.google.com/citations?user=0klfzfAAAAAJ&hl=en
+- Homepage: https://canslab1.github.io/
+
+## Software
+
+- Name: HATA
+- Language: Python
+- License: MIT
+- GitHub: https://github.com/canslab1/HATA
+- README: https://canslab1.github.io/HATA/
+
+## Publication
+
+Huang, C.-Y. & Fu, Y.-S. (2020). Hierarchical arc-type transition analysis for directed complex networks. IEEE Access, 8, 174802-174817.
+DOI: https://doi.org/10.1109/ACCESS.2020.3026064
+
+## Lab
+
+- CANS Lab (Complex Adaptive Networks and Systems Laboratory)
+- Chang Gung University, Department of CSIE
+- Website: https://canslab1.github.io/
