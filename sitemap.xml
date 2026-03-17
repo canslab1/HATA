@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://canslab1.github.io/HATA/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://canslab1.github.io/images/software/hata-arc-types.png</image:loc>
+      <image:title>HATA arc type classification diagram — HATA by Prof. Chung-Yuan Huang (黃崇源教授)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://canslab1.github.io/images/software/hata-4networks.png</image:loc>
+      <image:title>HATA analysis of four network types — HATA by Prof. Chung-Yuan Huang (黃崇源教授)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://canslab1.github.io/images/software/hata-travian.png</image:loc>
+      <image:title>HATA Travian online game network analysis — HATA by Prof. Chung-Yuan Huang (黃崇源教授)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://canslab1.github.io/images/software/hata-paper.png</image:loc>
+      <image:title>HATA research paper figure — HATA by Prof. Chung-Yuan Huang (黃崇源教授)</image:title>
+    </image:image>
   </url>
 </urlset>
