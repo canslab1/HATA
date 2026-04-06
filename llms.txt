@@ -1,4 +1,4 @@
-# HATA — Hierarchical Arc-Type Transition Analysis for Directed Networks
+# HATA — Hierarchical Arc Type Analysis
 
 > HATA extends HETA to directed networks, classifying directed arcs into four hierarchical types: BOND, Silk, Local Bridge, and Global Bridge. It analyzes the structural role of each arc in directed complex networks.
 
@@ -21,8 +21,8 @@
 
 ## Publication
 
-Huang, C.-Y. & Fu, Y.-S. (2020). Hierarchical arc-type transition analysis for directed complex networks. IEEE Access, 8, 174802-174817.
-DOI: https://doi.org/10.1109/ACCESS.2020.3026064
+Huang, C.-Y. & Chin, W. C. B. (2020). Distinguishing Arc Types to Understand Complex Network Strength Structures and Hierarchical Connectivity Patterns. IEEE Access, 8, 71021-71040.
+DOI: https://doi.org/10.1109/ACCESS.2020.2986017
 
 ## Lab
 
