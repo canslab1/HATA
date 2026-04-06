@@ -141,7 +141,240 @@
     <main class="content-wrapper">
         <article class="markdown-body" id="content" aria-live="polite">
             <h1>HATA — Hierarchical Arc Type Analysis</h1>
-            <div class="loading">Loading README...</div>
+            <!-- PRERENDER-START -->
+<p><img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-blue">
+<img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green">
+<a href="https://canslab1.github.io/"><img alt="CANS Lab" src="https://img.shields.io/badge/CANS_Lab-Homepage-orange"></a></p>
+<p>A tool for classifying directed arcs in complex networks into four hierarchical types:</p>
+<ul>
+<li><strong>BOND</strong> — Strong connections embedded within tight communities; removing them does not alter community structure.</li>
+<li><strong>Silk</strong> — Pendant arcs where one endpoint has degree 1; removal isolates that node.</li>
+<li><strong>Local Bridge</strong> — Cross-cluster connections linking nearby communities.</li>
+<li><strong>Global Bridge</strong> — Long-range connections linking distant communities; removal may disconnect the network.</li>
+</ul>
+<p>HATA extends the <a href="https://github.com/canslab1/HETA">HETA</a> framework (designed for undirected graphs) to <strong>directed networks</strong> by replacing the "common friends" concept with directional ego networks (outgoing/incoming).</p>
+<h2 id="overview">Overview</h2>
+<p>Many real-world networks are inherently directed — information flows, citation graphs, food webs, and online social interactions all have asymmetric relationships. While HETA can classify edges in undirected networks, directed arcs require a fundamentally different approach to neighborhood overlap computation.</p>
+<p>HATA addresses this by constructing separate outgoing and incoming ego networks for each arc endpoint, enabling the classification of directed arcs into the same four hierarchical types. This extension preserves the parameter-free, topology-driven philosophy of HETA while correctly handling the asymmetry of directed connections.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Parameter-free</strong> — Classification is driven entirely by network topology; no community labels, edge weights, or manual thresholds required.</li>
+<li><strong>Directed network support</strong> — Handles directed arcs using separate outgoing/incoming ego networks.</li>
+<li><strong>Multi-scale analysis</strong> — Ego networks expand layer by layer, capturing both local and global structural information.</li>
+<li><strong>Statistically adaptive thresholds</strong> — R1 threshold derived from degree-preserving random directed null models.</li>
+<li><strong>Multi-format input</strong> — Supports Pajek (.net), GML, GraphML, edge list, and adjacency list formats.</li>
+<li><strong>Dual interface</strong> — Both a PySide6 GUI and a full-featured CLI.</li>
+<li><strong>Parallel processing</strong> — Random network generation can use multiple CPU cores.</li>
+<li><strong>Rich output</strong> — Excel workbooks, CSV arc classification tables (Gephi/Cytoscape compatible), and multiple plot types.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p><strong>Requirements:</strong> Python 3.10+</p>
+<pre><code class="language-bash">git clone https://github.com/canslab1/HATA.git
+cd HATA
+pip install -r requirements.txt
+</code></pre>
+<h3 id="dependencies">Dependencies</h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NetworkX</td>
+<td>Network analysis</td>
+</tr>
+<tr>
+<td>NumPy / SciPy</td>
+<td>Numerical computing &amp; clustering</td>
+</tr>
+<tr>
+<td>Matplotlib</td>
+<td>Visualization</td>
+</tr>
+<tr>
+<td>PySide6</td>
+<td>Qt-based GUI</td>
+</tr>
+<tr>
+<td>openpyxl</td>
+<td>Excel output</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage">Usage</h2>
+<h3 id="gui-mode">GUI Mode</h3>
+<pre><code class="language-bash">python run_hata.py
+</code></pre>
+<p>Launches a desktop application with two tabs:</p>
+<ul>
+<li><strong>Arc Analysis</strong> — Load a single directed network, configure parameters, view classification results and various plots.</li>
+<li><strong>Suite Experiment</strong> — Batch-analyze a predefined set of networks and compare their fingerprints.</li>
+</ul>
+<h3 id="cli-mode">CLI Mode</h3>
+<pre><code class="language-bash"># Analyze a single directed network
+python run_hata.py analyze -i nets/leader.net
+
+# With options
+python run_hata.py analyze -i nets/leader.net -t 100 -p    # 100 random networks, parallel mode
+python run_hata.py analyze -i nets/leader.net -q 2          # Quick mode (limit to 2 layers)
+python run_hata.py analyze -i nets/leader.net --export-csv   # Export arc classification CSV
+
+# Run suite experiment
+python run_hata.py suite --name DEMO --run --dir nets/
+</code></pre>
+<h3 id="cli-options">CLI Options</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-i</code>, <code>--input</code></td>
+<td>Path to network file</td>
+</tr>
+<tr>
+<td><code>-t</code>, <code>--times</code></td>
+<td>Number of random networks for null model (default: 1000)</td>
+</tr>
+<tr>
+<td><code>-q</code>, <code>--quick</code></td>
+<td>Quick mode: limit analysis layers</td>
+</tr>
+<tr>
+<td><code>-p</code>, <code>--parallel</code></td>
+<td>Parallel random network generation</td>
+</tr>
+<tr>
+<td><code>-w</code>, <code>--workers</code></td>
+<td>Number of parallel workers</td>
+</tr>
+<tr>
+<td><code>-d</code>, <code>--debug</code></td>
+<td>Enable debug output</td>
+</tr>
+<tr>
+<td><code>--show-detail</code></td>
+<td>Save detail layer plots</td>
+</tr>
+<tr>
+<td><code>--show-betweenness</code></td>
+<td>Save arc betweenness centrality plot</td>
+</tr>
+<tr>
+<td><code>--show-pagerank</code></td>
+<td>Save PageRank-based weighting plot</td>
+</tr>
+<tr>
+<td><code>--show-degree</code></td>
+<td>Save degree distribution plot (in/out)</td>
+</tr>
+<tr>
+<td><code>--show-clustering</code></td>
+<td>Save network clustering plot</td>
+</tr>
+<tr>
+<td><code>--export-csv</code></td>
+<td>Export arc classification as CSV (for Gephi/Cytoscape)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-network-formats">Supported Network Formats</h2>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.net</code></td>
+<td>Pajek</td>
+</tr>
+<tr>
+<td><code>.gml</code></td>
+<td>GML</td>
+</tr>
+<tr>
+<td><code>.graphml</code></td>
+<td>GraphML</td>
+</tr>
+<tr>
+<td><code>.edgelist</code>, <code>.edges</code></td>
+<td>Edge List</td>
+</tr>
+<tr>
+<td><code>.adjlist</code></td>
+<td>Adjacency List</td>
+</tr>
+</tbody>
+</table>
+<h2 id="algorithm-overview">Algorithm Overview</h2>
+<pre><code>Read directed network → Split into weakly connected components
+  → Build outgoing/incoming multi-layer ego networks
+  → Compute neighborhood overlap for each arc at each layer
+  → Generate degree-preserving random directed networks (null model)
+  → Derive R1 threshold from null model
+  → Phase 1: Identify SILK (degree-1 endpoints)
+  → Phase 2: Classify BOND vs LOCAL_BRIDGE (R1 + R2 thresholds, layer-by-layer refinement)
+  → Phase 3: Remaining unclassified arcs → GLOBAL_BRIDGE
+  → Phase 4: Node information entropy &amp; structural importance
+  → Phase 5: Network fingerprint output
+</code></pre>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>HATA/
+├── run_hata.py              # Entry point (GUI / CLI)
+├── hata/
+│   ├── __init__.py          # Package metadata
+│   ├── constants.py         # Configuration constants
+│   ├── engine.py            # Core HATA algorithm
+│   ├── cli.py               # Command-line interface
+│   ├── plotting.py          # Matplotlib visualizations
+│   ├── excel_writer.py      # Excel / CSV output
+│   └── gui/
+│       ├── main_window.py   # PySide6 main window
+│       ├── link_analysis_tab.py   # Single network analysis tab
+│       ├── suite_experiment_tab.py # Batch experiment tab
+│       ├── worker.py        # QThread background workers
+│       └── plot_canvas.py   # Matplotlib-Qt integration
+├── nets/                    # Sample directed networks
+├── requirements.txt
+├── index.html               # GitHub Pages landing page
+├── 404.html                 # Custom 404 error page
+├── sitemap.xml              # XML sitemap for search engines
+├── robots.txt               # Crawler directives
+└── llms.txt                 # AI-readable project summary
+</code></pre>
+<h2 id="output">Output</h2>
+<ul>
+<li><strong>Excel (.xlsx)</strong> — Arc classification details, random network statistics, node entropy</li>
+<li><strong>CSV</strong> — Arc classification table (importable by Gephi / Cytoscape)</li>
+<li><strong>PNG</strong> — Network plots, betweenness, PageRank, degree distribution, clustering, fingerprint charts</li>
+</ul>
+<h2 id="authors">Authors</h2>
+<ul>
+<li><strong>Chung-Yuan Huang</strong> (黃崇源) — Department of Computer Science and Information Engineering, Chang Gung University, Taiwan (gscott@mail.cgu.edu.tw)</li>
+<li><strong>Wei-Chien-Benny Chin</strong> — Department of Urban Planning and Design, University of Malaya, Malaysia (wcchin.88@gmail.com)</li>
+</ul>
+<h2 id="citation">Citation</h2>
+<p>If you use this software in your research, please cite:</p>
+<blockquote>
+<p>Huang, C.-Y. &amp; Chin, W. C. B. (2020). Distinguishing Arc Types to Understand Complex Network Strength Structures and Hierarchical Connectivity Patterns. <em>IEEE Access</em>, 8, 71021–71040. https://doi.org/10.1109/ACCESS.2020.2986017</p>
+</blockquote>
+<p>See <code>CITATION.cff</code> for machine-readable citation metadata.</p>
+<h2 id="references">References</h2>
+<ol>
+<li>Huang, C.-Y. &amp; Chin, W. C. B. (2020). Distinguishing Arc Types to Understand Complex Network Strength Structures and Hierarchical Connectivity Patterns. <em>IEEE Access</em>, 8, 71021–71040. https://doi.org/10.1109/ACCESS.2020.2986017</li>
+</ol>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT License. See <a href="LICENSE">LICENSE</a> for details.</p>
+<!-- PRERENDER-END -->
         </article>
     </main>
     <footer class="site-footer">
