@@ -97,6 +97,11 @@
       box-shadow: 0 4px 12px rgba(39,174,96,0.20);
       transform: translateY(-2px);
     }
+    .btn:focus,
+    .btn:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+    }
     footer {
       background: #2c3e50;
       color: #fff;
@@ -126,16 +131,18 @@
   </header>
 
   <main class="container">
-    <div class="error-code">404</div>
-    <div class="error-message">Page Not Found</div>
+    <h1 class="error-code">404</h1>
+    <h2 class="error-message">Page Not Found</h2>
     <div class="error-desc">
       The page you are looking for does not exist. Please check the URL or navigate using the links below.
     </div>
+    <nav aria-label="Error page navigation">
     <div class="links">
       <a class="btn" href="https://canslab1.github.io/HATA/">README</a>
       <a class="btn" href="https://github.com/canslab1/HATA">GitHub Repo</a>
       <a class="btn" href="https://canslab1.github.io/">Lab Home</a>
     </div>
+    </nav>
   </main>
 
   <footer>
