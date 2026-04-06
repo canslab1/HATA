@@ -45,5 +45,8 @@ Issues = "https://github.com/canslab1/HATA/issues"
 [project.scripts]
 hata = "run_hata:main"
 
+[tool.setuptools]
+py-modules = ["run_hata"]
+
 [tool.setuptools.packages.find]
 include = ["hata*"]

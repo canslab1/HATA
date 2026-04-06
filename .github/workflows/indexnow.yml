@@ -1,7 +1,7 @@
 # ──────────────────────────────────────────────
 #  IndexNow 自動提交 workflow
 #  觸發條件：
-#    1. 每次 push 到 main（內容更新後立即通知搜尋引擎）
+#    1. 每次 push 到 main（任何更動皆通知搜尋引擎）
 #    2. 每週一早上 9:00（台灣時間）定期提交
 #    3. 手動觸發（workflow_dispatch）
 # ──────────────────────────────────────────────
@@ -10,15 +10,6 @@ name: IndexNow Submit
 on:
   push:
     branches: [main]
-    paths:
-      - 'index.html'
-      - 'README.md'
-      - '*.py'
-      - '*.cpp'
-      - '*.java'
-      - '*.m'
-      - 'src/**'
-      - 'docs/**'
   schedule:
     # 每週一 01:00 UTC = 台灣時間 09:00
     - cron: '0 1 * * 1'
@@ -32,10 +23,14 @@ jobs:
         run: |
           HOST="canslab1.github.io"
           KEY="d22a81b36ccb45e085fe6679a822df52"
-          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          REPO="HATA"
 
           URLS=(
-            "https://${HOST}/${REPO_NAME}/"
+            "https://${HOST}/${REPO}/"
+            "https://${HOST}/${REPO}/index.html"
+            "https://${HOST}/${REPO}/sitemap.xml"
+            "https://${HOST}/${REPO}/llms.txt"
+            "https://${HOST}/${REPO}/robots.txt"
           )
 
           # 組合 JSON 陣列
@@ -47,7 +42,7 @@ jobs:
           URL_JSON+="]"
 
           echo "══════════════════════════════════════"
-          echo "  IndexNow 自動提交 — ${REPO_NAME}"
+          echo "  IndexNow 自動提交 — ${REPO}"
           echo "  提交頁數: ${#URLS[@]}"
           echo "══════════════════════════════════════"
 

@@ -2,7 +2,7 @@
 
 > HATA extends HETA to directed networks, classifying directed arcs into four hierarchical types: BOND, Silk, Local Bridge, and Global Bridge. It analyzes the structural role of each arc in directed complex networks.
 
-## Author
+## Authors
 
 - Name: Chung-Yuan Huang (黃崇源)
 - Title: Full Professor, Department of CSIE, Chang Gung University
@@ -10,6 +10,10 @@
 - ORCID: https://orcid.org/0000-0002-8680-6755
 - Google Scholar: https://scholar.google.com/citations?user=0klfzfAAAAAJ&hl=en
 - Homepage: https://canslab1.github.io/
+
+- Name: Wei-Chien-Benny Chin
+- Affiliation: Department of Urban Planning and Design, University of Malaya, Malaysia
+- Email: wcchin.88@gmail.com
 
 ## Software
 

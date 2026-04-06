@@ -139,7 +139,12 @@ HATA/
 │       ├── worker.py        # QThread background workers
 │       └── plot_canvas.py   # Matplotlib-Qt integration
 ├── nets/                    # Sample directed networks
-└── requirements.txt
+├── requirements.txt
+├── index.html               # GitHub Pages landing page
+├── 404.html                 # Custom 404 error page
+├── sitemap.xml              # XML sitemap for search engines
+├── robots.txt               # Crawler directives
+└── llms.txt                 # AI-readable project summary
 ```
 
 ## Output
