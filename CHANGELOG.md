@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## v2.0.0 (2026-01-01)
+## v2.0.0 (2026-03-05)
 
 Complete rewrite from Python 2.7 to Python 3.
 
