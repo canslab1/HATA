@@ -116,6 +116,16 @@
       color: #a3e4bc;
       text-decoration: underline;
     }
+    footer a:focus-visible {
+      outline: 2px solid #a3e4bc;
+      outline-offset: 2px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
     @media (max-width: 768px) {
       .error-code { font-size: 4rem; }
       .container { padding: 1.5rem 0.5rem 1rem 0.5rem; }
